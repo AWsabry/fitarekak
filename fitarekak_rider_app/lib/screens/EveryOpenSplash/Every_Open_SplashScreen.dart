@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:fitarekak_rider_app/screens/home.dart';
+import 'package:fitarekak_rider_app/screens/Home/home.dart';
 import 'package:fitarekak_rider_app/theme.dart';
 import 'package:flutter/material.dart';
 

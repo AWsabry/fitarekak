@@ -13,6 +13,7 @@ ThemeData theme() {
       visualDensity: VisualDensity.adaptivePlatformDensity,
       primaryColor: Colors.black,
       backgroundColor: const Color.fromRGBO(0, 83, 146, 0.5),
+      canvasColor: const Color.fromRGBO(0, 0, 0, 0.5),
       // Color.fromRGBO(2, 156, 217, 1),
       accentColor: const Color.fromRGBO(2, 156, 217, 1));
 }

@@ -1,9 +1,9 @@
 // ignore: file_names
 import 'package:fitarekak_rider_app/constants.dart';
 import 'package:fitarekak_rider_app/screens/EveryOpenSplash/Every_Open_SplashScreen.dart';
+import 'package:fitarekak_rider_app/screens/Register/Register_screen.dart';
 import 'package:fitarekak_rider_app/screens/SplashScreenRegister/components/PageBuilder.dart';
 import 'package:fitarekak_rider_app/screens/SplashScreenRegister/components/splashContentModel.dart';
-import 'package:fitarekak_rider_app/screens/home.dart';
 import 'package:fitarekak_rider_app/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -96,7 +96,7 @@ class _SplashScreenRegisterState extends State<SplashScreenRegister> {
           // Add your onPressed code here!
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const EveryOpenSplash()),
+            MaterialPageRoute(builder: (context) => const RegisterScreen()),
           );
         },
         backgroundColor: Colors.black,

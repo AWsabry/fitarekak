@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fitarekak_rider_app/size_config.dart';
 
-const kPrimaryColor = Colors.lightBlue;
+const kPrimaryColor = Colors.black;
 const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
