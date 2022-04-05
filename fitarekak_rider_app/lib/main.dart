@@ -1,3 +1,4 @@
+import 'package:fitarekak_rider_app/screens/Register/Register_screen.dart';
 import 'package:fitarekak_rider_app/screens/SplashScreenRegister/Register_SplashScreen.dart';
 import 'package:fitarekak_rider_app/theme.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: theme(),
-      home: const SplashScreenRegister(),
+      home: const RegisterScreen(),
     );
   }
 }

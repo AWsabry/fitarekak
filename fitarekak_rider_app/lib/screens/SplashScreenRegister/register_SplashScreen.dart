@@ -96,7 +96,7 @@ class _SplashScreenRegisterState extends State<SplashScreenRegister> {
           // Add your onPressed code here!
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const RegisterScreen()),
+            MaterialPageRoute(builder: (context) => RegisterScreen()),
           );
         },
         backgroundColor: Colors.black,

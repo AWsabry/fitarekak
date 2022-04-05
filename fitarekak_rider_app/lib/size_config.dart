@@ -1,30 +1,51 @@
 import 'package:flutter/material.dart';
 
 class SizeConfig {
-  static MediaQueryData? _mediaQueryData;
-  static double? screenWidth;
-  static double? screenHeight;
-  static double? defaultSize;
-  static Orientation? orientation;
+  static double screenWidth = 1.0;
+  static double screenHeight = 1.0;
+  static double _blockSizeHorizontal = 0;
+  static double _blockSizeVertical = 0;
 
-  void init(BuildContext context) {
-    _mediaQueryData = MediaQuery.of(context);
-    screenWidth = _mediaQueryData!.size.width;
-    screenHeight = _mediaQueryData!.size.height;
-    orientation = _mediaQueryData!.orientation;
+  static double textMultiplier = 1.0;
+  static double imageSizeMultiplier = 1.0;
+  static double heightMultiplier = 1.0;
+  static double widthMultiplier = 1.0;
+  static bool isPortrait = true;
+  static bool isMobilePortrait = false;
+
+  void init(BoxConstraints constraints, Orientation orientation) {
+    if (orientation == Orientation.portrait) {
+      screenWidth = constraints.maxWidth;
+      screenHeight = constraints.maxHeight;
+      isPortrait = true;
+      if (screenWidth < 450) {
+        isMobilePortrait = true;
+      }
+    } else {
+      screenWidth = constraints.maxHeight;
+      screenHeight = constraints.maxWidth;
+      isPortrait = false;
+      isMobilePortrait = false;
+    }
+
+    _blockSizeHorizontal = screenWidth / 100;
+    _blockSizeVertical = screenHeight / 100;
+
+    textMultiplier = _blockSizeVertical;
+    imageSizeMultiplier = _blockSizeHorizontal;
+    heightMultiplier = _blockSizeVertical;
+    widthMultiplier = _blockSizeHorizontal;
   }
 }
 
-// Get the proportionate height as per screen size
-double getProportionateScreenHeight(double inputHeight) {
-  double? screenHeight = SizeConfig.screenHeight;
-  // 812 is the layout height that designer use
-  return (inputHeight / 812.0) * screenHeight!;
+getProportionateScreenHeight(double inputHeight) {
+  double? screenHeight = SizeConfig.screenWidth;
+  // 812.0 designer ishlatgan height
+  return (inputHeight / 812.0) * screenHeight;
 }
 
-// Get the proportionate height as per screen size
-double getProportionateScreenWidth(double inputWidth) {
+getProportionateScreenWidth(double inputWidth) {
   double? screenWidth = SizeConfig.screenWidth;
-  // 375 is the layout width that designer use
-  return (inputWidth / 375.0) * screenWidth!;
+  // 375.0 designer ishlatgan width
+  return (inputWidth / 375.0) * screenWidth;
 }

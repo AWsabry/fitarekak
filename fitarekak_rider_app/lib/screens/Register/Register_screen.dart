@@ -11,8 +11,8 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Body(),
+    return const Scaffold(
+      body: SingleChildScrollView(child: Body()),
     );
   }
 }
