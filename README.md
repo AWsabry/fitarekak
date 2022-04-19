@@ -5,5 +5,6 @@
 
 
 ## ScreenShots
+
 ![Preview](/ScreenShot (1).png)
-![Preview](ScreenShot (2).pngg)
+![Preview](ScreenShot (2).png)
