@@ -64,7 +64,7 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
             onChanged: widget.onChanged,
             cursorColor: kPrimaryColor,
             decoration: InputDecoration(
-              hintText: "Password",
+              hintText: "Enter Password",
               icon: const Icon(
                 Icons.lock,
                 color: kPrimaryColor,
@@ -103,7 +103,7 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
             onChanged: widget.onChanged,
             cursorColor: kPrimaryColor,
             decoration: InputDecoration(
-              hintText: "Password",
+              hintText: "Confirm Password",
               icon: const Icon(
                 Icons.lock,
                 color: kPrimaryColor,

@@ -1,0 +1,41 @@
+showAlertDialog(BuildContext context) {
+    // Create button
+    Widget okButton = TextButton(
+      child: const Text(
+        "Track",
+        style: TextStyle(color: kPrimaryColor),
+      ),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+    );
+
+    Widget cancel = TextButton(
+      child: const Text("Cancel"),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+    );
+
+    // Create AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: const Text(
+        "Track the Ambulance",
+        style: TextStyle(color: kSecondaryColor),
+      ),
+      content: const Text(
+          "Ambulance will arrive in : 05:00.\nWould you like to track it ?"),
+      actions: [
+        okButton,
+        cancel,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }

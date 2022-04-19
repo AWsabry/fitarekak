@@ -1,5 +1,10 @@
+import 'package:fitarekak_rider_app/screens/Complete_Profile/Complete_Profile_Screen.dart';
+import 'package:fitarekak_rider_app/screens/Home/home.dart';
+import 'package:fitarekak_rider_app/screens/Mobile_Confirmation/enteringPhoneScreen.dart';
+import 'package:fitarekak_rider_app/screens/Mobile_Confirmation/otpScreen.dart';
 import 'package:fitarekak_rider_app/screens/Register/Register_screen.dart';
-import 'package:fitarekak_rider_app/screens/SplashScreenRegister/Register_SplashScreen.dart';
+import 'package:fitarekak_rider_app/screens/Splash_Screens/SplashScreenRegister/components/splashContentModel.dart';
+import 'package:fitarekak_rider_app/screens/Splash_Screens/SplashScreenRegister/register_SplashScreen.dart';
 import 'package:fitarekak_rider_app/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: theme(),
-      home: const RegisterScreen(),
+      home: const SplashScreenRegister(),
     );
   }
 }

@@ -1,10 +1,14 @@
+import 'dart:async';
+
 import 'package:fitarekak_rider_app/components/already_have_an_account_acheck.dart';
 import 'package:fitarekak_rider_app/components/email_input_field.dart';
 import 'package:fitarekak_rider_app/components/default_button.dart';
 import 'package:fitarekak_rider_app/components/password_field.dart';
 import 'package:fitarekak_rider_app/constants.dart';
 import 'package:fitarekak_rider_app/loading.dart';
-import 'package:fitarekak_rider_app/screens/Register/components/background.dart';
+import 'package:fitarekak_rider_app/screens/Complete_Profile/Complete_Profile_Screen.dart';
+import 'package:fitarekak_rider_app/screens/Home/home.dart';
+import 'package:fitarekak_rider_app/components/background.dart';
 import 'package:fitarekak_rider_app/screens/Register/components/or_divider.dart';
 import 'package:fitarekak_rider_app/size_config.dart';
 
@@ -20,6 +24,18 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  waiting() async {
+    var _duration = const Duration(seconds: 3);
+    return Timer(_duration, navigationPage);
+  }
+
+  void navigationPage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const CompleteProfileScreen()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final List<String> errors = [];
@@ -56,7 +72,6 @@ class _BodyState extends State<Body> {
     );
 
     final _formKey = GlobalKey<FormState>();
-    final TextEditingController confirmPassword = TextEditingController();
     final TextEditingController password = TextEditingController();
 
     Size size = MediaQuery.of(context).size;
@@ -73,10 +88,11 @@ class _BodyState extends State<Body> {
                     fontWeight: FontWeight.bold, color: theme().primaryColor),
               ),
               SizedBox(height: size.height * 0.03),
-              SizedBox(
-                child: Image.asset(
-                  'assets/images/7610.jpg',
-                ),
+              const SizedBox(
+                child: Text('Logo'),
+                // child: Image.asset(
+                //   'assets/images/7610.jpg',
+                // ),
               ),
               // SvgPicture.asset(
               //   "assets/icons/signup.svg",
@@ -105,11 +121,13 @@ class _BodyState extends State<Body> {
                 press: () {
                   if (_formKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                    waiting();
                   }
                 },
               ),
               SizedBox(height: size.height * 0.03),
-              OrDivider(),
+              const OrDivider(),
               AlreadyHaveAnAccountCheck(
                 login: false,
                 press: () {

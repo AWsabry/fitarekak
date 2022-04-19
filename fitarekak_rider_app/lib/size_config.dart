@@ -5,6 +5,8 @@ class SizeConfig {
   static double screenHeight = 1.0;
   static double _blockSizeHorizontal = 0;
   static double _blockSizeVertical = 0;
+  late MediaQueryData _mediaQueryData;
+  late Orientation orientation;
 
   static double textMultiplier = 1.0;
   static double imageSizeMultiplier = 1.0;
@@ -35,6 +37,13 @@ class SizeConfig {
     imageSizeMultiplier = _blockSizeHorizontal;
     heightMultiplier = _blockSizeVertical;
     widthMultiplier = _blockSizeHorizontal;
+  }
+
+  void initialize(BuildContext context) {
+    _mediaQueryData = MediaQuery.of(context);
+    screenWidth = _mediaQueryData.size.width;
+    screenHeight = _mediaQueryData.size.height;
+    orientation = _mediaQueryData.orientation;
   }
 }
 

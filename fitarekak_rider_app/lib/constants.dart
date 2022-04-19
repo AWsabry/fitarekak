@@ -16,7 +16,7 @@ const kAnimationDuration = Duration(milliseconds: 200);
 final headingStyle = TextStyle(
   fontSize: getProportionateScreenWidth(28),
   fontWeight: FontWeight.bold,
-  color: Colors.black,
+  color: Color.fromRGBO(2, 156, 217, 1),
   height: 1.5,
 );
 
@@ -29,7 +29,7 @@ const String kEmailNullError = "Please Enter your email";
 const String kInvalidEmailError = "Please Enter Valid Email";
 const String kInvalidError = "Check your Email or Password then retry";
 const String kPassNullError = "Please Enter your password";
-const String kShortPassError = "Password is too short";
+const String kShortPassError = "Password is less than 8 characters";
 const String kMatchPassError = "Passwords don't match";
 const String kNamelNullError = "Please Enter your name";
 const String kPhoneNumberNullError = "Please Enter your phone number";

@@ -17,7 +17,7 @@ class TextFieldContainer extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(5)),
       width: size.width * 0.9,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(25),
       ),
       child: child,
     );
